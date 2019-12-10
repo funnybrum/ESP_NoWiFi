@@ -13,7 +13,7 @@ WebServer webServer = WebServer(&settingsData.network, &logger, &systemCheck);
 
 void setup()
 { 
-    Serial.begin(115200);
+    Serial.begin(74880);
     while (! Serial) {
         delay(1);
     }

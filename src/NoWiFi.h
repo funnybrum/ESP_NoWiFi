@@ -12,12 +12,7 @@
 #define HTTP_PORT 80
 #define HOSTNAME "no-wifi"
 
-struct SettingsData {
-    NetworkSettings network;
-};
-
 extern Logger logger;
 extern Settings settings;
-extern SettingsData settingsData;
 extern WiFiManager wifi;
 extern SystemCheck systemCheck;

@@ -2,7 +2,7 @@
 
 char buffer[4096];
 
-WebServer::WebServer(NetworkSettings* networkSettings, Logger* logger, SystemCheck* systemCheck)
+WebServer::WebServer(Logger* logger, NetworkSettings* networkSettings)
     :WebServerBase(networkSettings, logger, systemCheck) {
 }
 

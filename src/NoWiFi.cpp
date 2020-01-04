@@ -1,15 +1,11 @@
 #include "NoWiFi.h"
 
-void initSettings() {
-    strcpy(settingsData.network.hostname, HOSTNAME);
-}
-
-SettingsData settingsData = SettingsData();
 Logger logger = Logger();
-Settings settings = Settings(&logger, (void*)(&settingsData), sizeof(SettingsData), initSettings);
-WiFiManager wifi = WiFiManager(&logger, &settingsData.network);
+Settings settings = Settings();
+
+WiFiManager wifi = WiFiManager(&logger, &settings.getSettings()->network);
 SystemCheck systemCheck = SystemCheck(&logger);
-WebServer webServer = WebServer(&settingsData.network, &logger, &systemCheck);
+WebServer webServer = WebServer(&logger, &settings.getSettings()->network);
 
 void setup()
 { 

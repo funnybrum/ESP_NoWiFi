@@ -6,7 +6,7 @@
 
 class WebServer: public WebServerBase {
     public:
-        WebServer(NetworkSettings* networkSettings, Logger* logger, SystemCheck* systemCheck);
+        WebServer(Logger* logger, NetworkSettings* networkSettings);
         void registerHandlers();
         void handle_root();
         void handle_get();

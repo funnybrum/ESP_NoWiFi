@@ -7,13 +7,16 @@ struct SettingsData {
     NetworkSettings network;
 };
 
-class Settings: public SettingsBase<SettingsData> {
+struct Empty {};
+
+class Settings: public SettingsBase<SettingsData, Empty> {
     public:
         Settings();
         SettingsData* getSettings();
 
     protected:
         void initializeSettings();
+        Empty* getRTCSettings();
 
     private:
         SettingsData settingsData;

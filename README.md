@@ -1,3 +1,5 @@
+Note: This has been used quite some time as template for ESP82xx baed projects. There is zero progress on the NoWiFi idea yet.
+
 # No WiFi
 
 ESP8266/ESP8258/ESP32 are cheap microcontrollers that seems quite good for DIY IoT devices. However having a lot of them introduce an issue - EMF pollution. EMF pollution is created when there are a lot of packets flowing over the WiFi network. This project is trying to provide a solution for that problem.

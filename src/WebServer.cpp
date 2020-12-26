@@ -20,13 +20,7 @@ void WebServer::handle_root() {
 void WebServer::handle_settings() {
     systemCheck->registerWebCall();
 
-    bool save = false;
-
-    wifi.parse_config_params(this, save);
-
-    if (save) {
-        settings.save();
-    }
+    wifi.parse_config_params(this);
 
     char network_settings[strlen_P(NETWORK_CONFIG_PAGE) + 32];
     wifi.get_config_page(network_settings);

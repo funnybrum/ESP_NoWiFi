@@ -12,3 +12,7 @@ void Settings::initializeSettings() {
 SettingsData* Settings::getSettings() {
     return &settingsData;
 }
+
+Empty* Settings::getRTCSettings() {
+    return NULL;
+}

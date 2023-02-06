@@ -3,7 +3,7 @@
 char buffer[4096];
 
 WebServer::WebServer(Logger* logger, NetworkSettings* networkSettings)
-    :WebServerBase(networkSettings, logger, systemCheck) {
+    :WebServerBase(networkSettings, logger) {
 }
 
 void WebServer::registerHandlers() {
@@ -12,14 +12,11 @@ void WebServer::registerHandlers() {
 }
 
 void WebServer::handle_root() {
-    systemCheck->registerWebCall();
     server->sendHeader("Location","/settings");
     server->send(303);
 }
 
 void WebServer::handle_settings() {
-    systemCheck->registerWebCall();
-
     wifi.parse_config_params(this);
 
     char network_settings[strlen_P(NETWORK_CONFIG_PAGE) + 32];
